@@ -49,7 +49,7 @@ public class PallCPU : MonoBehaviour {
 		transform.position = new Vector3 (0f, 0f, 0f);
 		transform.Rotate (0f, 0f, -transform.rotation.eulerAngles.z);               
 		yield return new WaitForSeconds(3);
-		speed = 0.4f;
+		speed = 0.15f;
 
 	}
 

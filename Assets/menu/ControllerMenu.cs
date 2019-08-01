@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ControllerMenu : MonoBehaviour {
 
@@ -8,22 +9,36 @@ public class ControllerMenu : MonoBehaviour {
 	public int opz;
 	public GameObject o1;
 	public GameObject o2;
+	public Text rules;
+	public bool ruleShow;
 
 
 	// Use this for initialization
 	void Start () {
+			
+		Time.timeScale = 1.0f;
+		rules.GetComponent<Text>().enabled = false;
+		ruleShow = false;
 
-	
 	}
 	
 	// Update is called once per frame
-	void FixedUpdate () {
+	void Update () {
 
-		if (Input.GetKeyDown (KeyCode.DownArrow)) {
+		if (opz == 2 && Input.GetKeyDown (KeyCode.Return)) {
+			o2.GetComponent<SpriteRenderer> ().enabled = false;
+			o1.GetComponent<SpriteRenderer> ().enabled = false;
+			this.GetComponent<SpriteRenderer> ().enabled = false;
+			rules.GetComponent<Text> ().enabled = true;
+			ruleShow = true;
+		}
+
+
+		if (Input.GetKeyDown (KeyCode.DownArrow) && ruleShow==false) {
 			opz+=1;
 		}
 
-		if (Input.GetKeyDown (KeyCode.UpArrow)) {
+		if (Input.GetKeyDown (KeyCode.UpArrow) && ruleShow==false) {
 			opz-=1;
 		}
 
@@ -60,8 +75,24 @@ public class ControllerMenu : MonoBehaviour {
 		}
 
 		if (opz == 2 && Input.GetKeyDown (KeyCode.Return)) {
-			Application.Quit();
+			if (ruleShow == false) {
+				o2.GetComponent<SpriteRenderer> ().enabled = false;
+				o1.GetComponent<SpriteRenderer> ().enabled = false;
+				this.GetComponent<SpriteRenderer> ().enabled = false;
+				rules.GetComponent<Text> ().enabled = true;
+				ruleShow = true;
+			} 
 		}
+
+		if (Input.GetKeyDown (KeyCode.E) && ruleShow==true) {
+			o2.GetComponent<SpriteRenderer> ().enabled = true;
+			o1.GetComponent<SpriteRenderer> ().enabled = true;
+			this.GetComponent<SpriteRenderer> ().enabled = true;
+			rules.GetComponent<Text> ().enabled = false;
+			ruleShow = false;
+		}
+
 	
 	}
+		
 }

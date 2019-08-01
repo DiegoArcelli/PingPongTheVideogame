@@ -13,7 +13,6 @@ public class PlayerTwo : MonoBehaviour {
 		Collider2D collider = coll.collider;
 		Vector3 contactPoint = coll.contacts[0].point;
 		Vector3 center = collider.bounds.center;
-		Debug.Log (contactPoint.y > center.y);
 
 	}
 

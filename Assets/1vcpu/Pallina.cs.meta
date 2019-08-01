@@ -1,10 +1,17 @@
 fileFormatVersion: 2
 guid: ac4385b581ab120418429cb1853e2c18
-timeCreated: 1536081336
-licenseType: Free
 MonoImporter:
+  externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - score: {instanceID: 0}
+  - lose: {instanceID: 0}
+  - ost: {instanceID: 0}
+  - win: {instanceID: 0}
+  - source: {instanceID: 0}
+  - loseText: {instanceID: 0}
+  - winText: {instanceID: 0}
+  - menu: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
